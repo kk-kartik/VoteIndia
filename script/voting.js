@@ -63,10 +63,10 @@ function verify(){
 
 function verify2(){
     const code = document.getElementById("OTP").value;
-    
+    var cVote = document.getElementById("cVote");
     window.confirmationResult.confirm(code).then((result) => {
     // User signed in successfully.
-    sessionStorage.setItem('flag',true);
+   cVote.style.display = "grid";
     const user = result.user;
     console.log(user);
        loadCan();
