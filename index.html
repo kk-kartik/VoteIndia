@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vote India - for a better future</title>
+        <link rel="icon" href="mIcon.png">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body onload="load();">
+        <div class="header"><img src="VIndIcon.png"></div>
+        <div class="mBody">
+            <div class="mstats">
+                <div class="sthead">
+                    <div class="votcnt">
+                        VOTER TURNOUT<br> <span id="tcount">0</span>
+                    </div> 
+                </div>
+                <div class="stats" id="stats">
+                </div> 
+            </div>
+            
+            <div class="alli">
+                <button onclick="parent.location='voter/registration.html'">Register for Voting</button>
+                <button onclick="parent.location='adminstration/login.html'">Admin Login</button>
+            </div>
+        </div>
+        
+        <div class="footer">Created by &nbsp; <a href="https://kk-kartik.github.io" target="_blank"> Kartik Kurupaswamy</a></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+        <script src="https://cdn.anychart.com/geodata/2.1.1/countries/india/india.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="../script/stats.js"></script>
+    </body>
+</html>
