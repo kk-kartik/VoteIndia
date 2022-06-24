@@ -69,7 +69,7 @@ function verify2(){
     sessionStorage.setItem('flag',true);
     const user = result.user;
     console.log(user);
-       
+       loadCan();
     // ...
     }).catch((error) => {
     // User couldn't sign in (bad verification code?)
@@ -83,8 +83,8 @@ function loadCan(){
     
     const $volTemp=$('.canTemplate');
 
-    database.ref('Candidates').on('value',(result)=>{
-        $('#ccVote').find('label').remove();
+    database.ref('Candidates').once('value').then((result)=>{
+       
         result.forEach((res)=>{
             console.log(res);
             console.log(res.val().name);
