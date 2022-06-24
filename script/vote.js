@@ -19,10 +19,7 @@ function proceed() {
     verVoter2.style.display = "flex";
 }
 function proceed2() {
-    if (sessionStorage.getItem("flag") == "true") {
-        full();
-        cVote.style.display = "grid";
-    }
+    full();
 }
 
 
