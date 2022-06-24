@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vote India - for a better future</title>
+        <link rel="icon" href="../mIcon.png">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/voting.css">
+        <script src="https://kit.fontawesome.com/099dc0ed07.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="header"><img src="../VIndIcon.png"></div>
+        <div class="mVote" id="mVote"><button class="stVote" type="button" onclick="gVer(); return false;">START VOTING <i class="fa-solid fa-arrow-right-long"></i></button></div>
+        <div class="verVoter" id="verVoter"><form onsubmit="verify(); proceed(); return false;" autocomplete="off"><input id="UID" class="stVote2" type="text" placeholder="Enter your VOTER ID"></form></div>
+        <div class="verVoter" id="verVoter2"><form onsubmit="verify2(); proceed2(); loadCan(); return false;" autocomplete="off"><input id="OTP" class="stVote2" type="text" placeholder="Enter OTP"></form></div>
+        <div class="cVote" id="cVote">
+            <div id="ccVote"></div>
+            <div class="btn">
+                <button class="ctNota" type="button" onclick="castNota(); return false;">NOTA</button>
+                <button class="ctVote" type="button" onclick="castVote(); return false;">CAST VOTE</button>
+            </div>
+        </div>
+        <label class="canTemplate" id="canTemplate">
+            <input type="radio" id="radio" name="radioname" value="another" />
+            <div class="mcan">
+                <div id="pic"><img src="../mIcon.png" class="ptyPic"></div>
+            <div class="ccan">
+                <div id="name"></div>
+                <div id="pty"></div>
+            </div>
+            <div id="fprint"><img src="../VIcon.png" class="fprint"></div>
+            </div>
+        </label>
+        <div class="footer">Created by &nbsp; <a href="https://kk-kartik.github.io" target="_blank"> Kartik Kurupaswamy</a></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="../script/voting.js"></script>
+        <script src="../script/vote.js"></script>
+    </body>
+</html>

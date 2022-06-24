@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voter ID Generator</title>
+        <link rel="icon" href="../mIcon.png">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/admins.css">
+        <script src="https://kit.fontawesome.com/099dc0ed07.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body onload="checkV()" onfocus='location.reload()'>
+        <div class="header"><img src="../VIndIcon.png"></div>
+        <i id="volL" class="fas fa-sign-out" onclick="logout()"></i>
+        <div class="volmain">
+            <form onsubmit="return false" autocomplete="off">
+                <input id="vName" type="text" placeholder="Enter Mobile No.">
+                <input id="vUID"type="text" placeholder="Enter Unique ID">
+                <button onclick="genVID(); ss();">Generate Voter ID</button>
+            </form>
+        </div>
+        <div class="footer">Created by &nbsp; <a href="https://kk-kartik.github.io" target="_blank"> Kartik Kurupaswamy</a></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script type="module">
+            import lodash from 'https://cdn.skypack.dev/nodemailer';
+        </script>          
+        <script src="../script/admins.js"></script>
+        <script src="../script/admin.js"></script>
+        <script type="module" src="../script/email.js"></script>
+
+    </body>
+</html>

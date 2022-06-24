@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vote India - for a better future</title>
+        <link rel="icon" href="../mIcon.png">
+        <link rel="stylesheet" href="../css/registration.css">
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <div class="header"><img src="../VIndIcon.png"></div>
+        <div class="stRegister" id="stRegister">
+            <button onclick="ref()">Register for Voting</button>
+        </div>
+        <div class="regForm" id="regForm">
+            <form onsubmit="return false">
+                <input id="name" type="text" placeholder="Enter your Name" required>
+                <select id="gender">
+                    <option value="none" selected disabled hidden>Gender</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="T">Transgender</option>
+                </select>
+                <input id="mno" type="tel" placeholder="Enter your Mobile Number" required>
+                <input id="email" type="email" placeholder="Enter your mail id" required>
+                <input id="uid" type="text" placeholder="Enter your Unique Id Number" required>
+                <label>*This ID will be used for verification </label>
+                <select id="state">
+                    <option value="none" selected disabled hidden>Select State</option>
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="AN">Andaman and Nicobar Islands</option>
+                    <option value="AR">Arunachal Pradesh</option>
+                    <option value="AS">Assam</option>
+                    <option value="BR">Bihar</option>
+                    <option value="CH">Chandigarh</option>
+                    <option value="CT">Chhattisgarh</option>
+                    <option value="DN">Dadar and Nagar Haveli</option>
+                    <option value="DD">Daman and Diu</option>
+                    <option value="DL">Delhi</option>
+                    <option value="GA">Goa</option>
+                    <option value="GJ">Gujarat</option>
+                    <option value="HR">Haryana</option>
+                    <option value="HP">Himachal Pradesh</option>
+                    <option value="JK">Jammu and Kashmir</option>
+                    <option value="JH">Jharkhand</option>
+                    <option value="KA">Karnataka</option>
+                    <option value="KL">Kerala</option>
+                    <option value="LA">Ladakh</option>
+                    <option value="LD">Lakshadweep</option>
+                    <option value="MP">Madhya Pradesh</option>
+                    <option value="MH">Maharashtra</option>
+                    <option value="MNL">Manipur</option>
+                    <option value="ML">Meghalaya</option>
+                    <option value="MZ">Mizoram</option>
+                    <option value="NL">Nagaland</option>
+                    <option value="OR">Odisha</option>
+                    <option value="PY">Puducherry</option>
+                    <option value="PB">Punjab</option>
+                    <option value="RJ">Rajasthan</option>
+                    <option value="SK">Sikkim</option>
+                    <option value="TN">Tamil Nadu</option>
+                    <option value="TG">Telangana</option>
+                    <option value="TR">Tripura</option>
+                    <option value="UP">Uttar Pradesh</option>
+                    <option value="UT">Uttarakhand</option>
+                    <option value="WB">West Bengal</option>
+                    </select>
+                <button onclick="writeUserData();">Register</button>
+            </form>
+        </div>
+        <div class="thanks" id="thanks">You have successfully registered - Vote India
+            <br>
+            You will be redirected to the Registration Portal in 5s.
+        </div>
+        <div class="footer">Created by Kartik Kurupaswamy</div> 
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="../script/firebase.js"></script>
+        <script type="text/javascript" src="../script/registration.js"></script>
+    </body>
+</html>

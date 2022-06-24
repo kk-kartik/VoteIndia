@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Portal</title>
+        <link rel="icon" href="../mIcon.png">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/admins.css">
+        <script src="https://kit.fontawesome.com/099dc0ed07.js" crossorigin="anonymous"></script>
+    </head>
+    <body onload="checkA();fetchStatus();" onfocus='location.reload()'>
+        <div class="header"><img src="../VIndIcon.png"></div> 
+        <div class="head">
+            <nav>
+                <ul>
+                    <li onclick="disH()">Home</li>
+                    <li><a onclick="disV();getVol();">Volunteers</a></li>
+                    <li><a onclick="disC(); getCan();">Candidates</a></li>
+                    <li><a onclick="disS();stIndia();">Statistics</a></li>
+                    <li><i class="fas fa-sign-out" onclick="logout()"></i></li>
+                </ul>   
+            </nav>
+        </div>
+        <div id="aHome" class="aHome">
+            Current Phase: <div id="status"></div>
+            <div><button id="cStatus" on>Change Phase</button></div>
+        </div>
+        <div id="aVol" class="aVol">
+            <div class="AVol">
+                <div class="volTemplate">
+                    <div class="userName">Volunteer Name</div>
+                    <div class="userID">Volunteer Email</div>
+                </div>
+            </div>
+            <div id="aaVol" class="aaVol">
+            </div>
+            
+            <div id="addVol" class="addVol">
+                <input id="vName" type="text" placeholder="Enter Name" autocomplete="off">
+                <input id="vEmail" type="email" placeholder="Enter Email" autocomplete="off">
+                <input id="vPass" type="text" placeholder="Enter Password" autocomplete="off">
+               
+                <button type="button" onclick="createVol(); return false;">Add Volunteer</button>
+                <button type="button" onclick="cancel(); return false;">Cancel</button>
+            </div>
+        </div>
+        <div class="aCan" id="aCan">
+
+        </div>
+        <div id="stats" class="stats">
+                <script src="../script/stats2.js"> </script>
+                <div class="container"></div>
+                <script src="../script/stats.js"></script>
+        </div>
+        <div class="footer">Created by &nbsp; <a href="https://kk-kartik.github.io" target="_blank"> Kartik Kurupaswamy</a></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-map.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+        <script src="https://cdn.anychart.com/geodata/2.1.1/countries/india/india.js"></script>
+        <script src="../script/admins.js"></script>
+        <script src="../script/admin.js"></script>
+        
+    </body>
+</html>

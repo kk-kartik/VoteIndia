@@ -1,0 +1,158 @@
+.head{
+    width: 100%;
+    height:10vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+nav{
+    width:100%;
+    padding: 0;
+    text-align: center;
+}
+nav ul{
+    background: rgba(250, 249, 249, 0.9);
+    width: 100%;
+    margin-top: 0;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 20px 30px;
+    font-size: 20px;
+    color: #000;
+}
+.aHome,
+.aVol,
+.aCan,
+.stats{
+    width: 100%;
+    height: 70vh;
+}
+.aHome{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 50px;
+}
+
+button{
+    margin: 10px;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    background-image: linear-gradient(to right bottom, rgb(42, 153, 161),rgb(135, 206, 211),rgb(42, 153, 161));
+    border-radius: 10px;
+    border-color: rgb(72, 247, 247);
+    padding: 1vw;
+}
+
+.addVol button{
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    background-image: linear-gradient(to right bottom, rgb(42, 153, 161),rgb(135, 206, 211),rgb(42, 153, 161));
+    border-radius: 10px;
+    border-color: rgb(72, 247, 247);
+}
+
+input{
+    border: 2px solid;
+    margin: 5px 10px;
+    padding: 10px;
+    outline: none;
+    background:  azure;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.aVol{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    height: 70vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.addVol{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:150;
+}
+.aavol,
+.AVol{
+    margin: 10px;
+    border: 2px solid;
+    padding: 1vw 1vw;
+    justify-content: center;
+    text-align: center;
+
+}
+.volTemplate{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    align-content: center;
+}
+.aCan,
+.stats{
+    display: none;
+}
+.login,
+.volmain{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    background-image: linear-gradient(to right bottom, rgb(42, 153, 161),rgb(135, 206, 211),rgb(42, 153, 161));
+    display: flex;
+    flex-direction: column;
+    padding: 1vw 1vw;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+form input{
+    border: 2px solid;
+    margin: 10px 00;
+    padding: 20px;
+    outline: none;
+    background:  azure;
+    font-size: 16px;
+    border-radius: 10px;
+}
+form button{
+    padding: 15px;
+    background-image: linear-gradient(to bottom, rgb(94, 6, 145),rgb(120, 85, 141),rgb(76, 4, 117));
+    color: white;
+    font-size: 18px;
+    border:0;
+    outline:none;
+    cursor: pointer;
+    width: 300px;
+    margin: 20px auto 0;
+    border-radius: 30px;
+}
+#volL{
+    position: fixed;
+    top:15vh;
+    right:20px;
+    font-size: 30px;
+    
+}
+.userName,
+.userID{
+    font-size: 20px;
+}

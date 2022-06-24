@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vote India - for a better future</title>
+        <link rel="icon" href="../mIcon.png">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/admins.css">
+    </head>
+    <body onload="checkL()" onfocus='location.reload()'>
+        <div class="header"><img src="../VIndIcon.png"></div>
+        <div class="login">
+            <form onsubmit="return false">
+                <input id="aid" type="text" placeholder="Enter UserID" required>
+                <input id="ps" type="password" placeholder="Enter password" required>
+                <button onclick="vol()">Login as Volunteer</button>
+                <button onclick="adl()">Login as Admin</button>
+            </form>
+        </div>
+        <div class="footer">Created by Kartik Kurupaswamy</div>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+        <script src="../script/admins.js"></script>
+    </body>
+</html>
