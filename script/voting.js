@@ -66,10 +66,11 @@ function verify2(){
     var cVote = document.getElementById("cVote");
     window.confirmationResult.confirm(code).then((result) => {
     // User signed in successfully.
-   cVote.style.display = "grid";
+   
     const user = result.user;
     console.log(user);
        loadCan();
+        cVote.style.display = "grid";
     // ...
     }).catch((error) => {
     // User couldn't sign in (bad verification code?)
