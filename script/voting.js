@@ -27,6 +27,7 @@ window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('OTP', {
 
 function verify(){
     var uid=document.getElementById("UID").value;
+    if(uid=="") location.replace("voting.html");
     database.ref('Voters/'+uid).on('value',(res)=>{
         if(res.val().verified==false){
             location.replace('unverified.html');
@@ -83,6 +84,7 @@ function loadCan(){
     const $volTemp=$('.canTemplate');
 
     database.ref('Candidates').on('value',(result)=>{
+        $('#ccVote').empty();
         result.forEach((res)=>{
             console.log(res);
             console.log(res.val().name);
