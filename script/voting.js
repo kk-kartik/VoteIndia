@@ -135,6 +135,11 @@ function castVote(){
             pty: cPTY,
         });
         database.ref('Voters/'+UID+'/voted').set(true);
+     firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+    });
         location.replace("wait.html");
 }
 //After Votinf is done by a voter
@@ -180,6 +185,7 @@ let progress = setInterval(() => {
       rgb(176, 229, 161) ${progressValue * 45}deg
   )`;
     if (progressValue == progressEndValue) {
+       
         sessionStorage.clear();
         location.replace('voting.html');
         clearInterval(progress);
