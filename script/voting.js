@@ -84,7 +84,7 @@ function loadCan(){
     const $volTemp=$('.canTemplate');
 
     database.ref('Candidates').on('value',(result)=>{
-        $('#ccVote').empty();
+        $('#ccVote').find('label').remove();
         result.forEach((res)=>{
             console.log(res);
             console.log(res.val().name);
