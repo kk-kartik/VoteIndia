@@ -1,0 +1,7 @@
+{
+    "server": {
+      "routes": {
+        "/vendor": "./node_modules"
+      }
+    }
+  }
