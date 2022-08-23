@@ -132,21 +132,21 @@ Vote = {
     }
     const signature = await Vote.signRequest(tx)
     const relayTransactionHash = await Vote.itx.send('relay_sendTransaction', [tx, signature])
-    console.log(relayTransactionHash.relayTransactionHash)
+    //console.log(relayTransactionHash.relayTransactionHash)
     sessionStorage.setItem('reTx', relayTransactionHash.relayTransactionHash);
   },
   getAcc:async ()=>{
     database.ref('AccCount').on('value',(res)=>{ 
-      console.log(res.val());
+      //console.log(res.val());
       randomIndex = Math.floor(Math.random() * res.val());
     console.log(randomIndex++);
     database.ref("Acc/"+randomIndex).on('value',(snapshot) =>
       {
-        console.log(snapshot);
-        console.log(snapshot.val());
+        //console.log(snapshot);
+        //console.log(snapshot.val());
         Vote.add = snapshot.val().add;  
         Vote.pk = snapshot.val().pk;
-      console.log(Vote.add+"=====>>"+Vote.pk);
+     // console.log(Vote.add+"=====>>"+Vote.pk);
       });
     });
   },
@@ -158,7 +158,7 @@ Vote = {
   },
   getBalance: async()=>{
     response=await Vote.itx.send('relay_getBalance',[Vote.add]);
-    console.log(response);
+    //console.log(response);
   },
   signRequest: async (tx)=>{
     const relayTransactionHash = ethers.utils.keccak256(
@@ -172,6 +172,7 @@ Vote = {
   waiti:async (tx)=>{
     let mined = false
     await Vote.account();
+    console.log("Finally doing it");
   while (!mined) {
     const statusResponse = await Vote.itx.send('relay_getTransactionStatus', [tx])
 
@@ -185,7 +186,7 @@ Vote = {
         }
       }
     }
-    await Vote.waitkaro(1000)
+    await Vote.waitkaro(500)
   }
   },
   waitkaro:async (milliseconds) => {
@@ -193,18 +194,20 @@ Vote = {
   },
 };
 async function castVote(){
+    console.log("Just started now");
     
     var can=document.querySelector('input[type="radio"]:checked');
-    console.log(can);
+    //console.log(can);
     var text=can.parentElement.innerText;
     const match = /\r|\n/.exec(text);
-    console.log(match.index);
+    //console.log(match.index);
 
-    var cName=text.substring(0,match.index);
-    var cPTY=text.substring(match.index + 1);
-    console.log(cName+" => "+cPTY);
+    const cName=text.substring(0,match.index);
+    const cPTY=text.substring(match.index + 1);
+    //console.log(cName+" => "+cPTY);
     const UID=sessionStorage.getItem('UID');
     const VID=sessionStorage.getItem('VID');
+    console.log("Almost on way");
       await  Vote.cast(VID,cName,cPTY);
       database.ref('Voters/'+UID+'/voted').set(true);
       location.replace("wait.html");

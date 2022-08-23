@@ -9,10 +9,10 @@
     <body>
         <div class="header"><img src="../VIndIcon.png"></div>
         <div class="stRegister" id="stRegister">
-            <button onclick="ref()">Register for Voting</button>
+            <button  type="submit" onclick="ref()">Register for Voting</button>
         </div>
         <div class="regForm" id="regForm">
-            <form onsubmit="return false">
+            <form onsubmit="writeUserData();return false;">
                 <input id="name" type="text" placeholder="Enter your Name" required>
                 <select id="gender">
                     <option value="none" selected disabled hidden>Gender</option>
@@ -64,7 +64,7 @@
                     <option value="UT">Uttarakhand</option>
                     <option value="WB">West Bengal</option>
                     </select>
-                <button onclick="writeUserData();">Register</button>
+                <button type="submit">Register</button>
             </form>
         </div>
         <div class="thanks" id="thanks">You have successfully registered - Vote India
@@ -74,6 +74,7 @@
         <div class="footer">Created by Kartik Kurupaswamy</div> 
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="../script/firebasemain.js"></script>
         <script src="../script/firebase.js"></script>
         <script type="text/javascript" src="../script/registration.js"></script>
     </body>

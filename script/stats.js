@@ -1,20 +1,9 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyBuUF1ZWbAvrAWpkbpiA0dwtC5klaGlzxs",
-  authDomain: "voteindia-55a34.firebaseapp.com",
-  databaseURL: "https://voteindia-55a34-default-rtdb.firebaseio.com/",
-  projectId: "voteindia-55a34",
-  storageBucket: "voteindia-55a34.appspot.com",
-  messagingSenderId: "781343239500",
-  appId: "1:781343239500:web:f35eb7325c67adc90733e9"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-let database = firebase.database();
+
 var mmp=new Map();
 var fmp=new Map();
 var tmp=new Map();
 var tc=0;
-function load(){
+function loads(){
 database.ref('data/state').on('value',(res)=>{
   console.log(res);
   tc=0;
@@ -28,8 +17,7 @@ database.ref('data/state').on('value',(res)=>{
 });
 }
 function cal() {
-  
-var states = document.getElementById("states");
+  console.log("Hey");
 var tcount = document.getElementById('tcount');
 // create map
 var map = anychart.map();
@@ -95,7 +83,7 @@ series.tooltip().format(function (e) {
 // set geo data, you can find this map in our geo maps collection
 // https://cdn.anychart.com/#maps-collection
 map.geoData(anychart.maps['india']);
-
+console.log("Almost here");
 //set map container id (div)
 map.container('stats');
 

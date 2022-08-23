@@ -1,15 +1,4 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyBuUF1ZWbAvrAWpkbpiA0dwtC5klaGlzxs",
-    authDomain: "voteindia-55a34.firebaseapp.com",
-    databaseURL: "https://voteindia-55a34-default-rtdb.firebaseio.com/",
-    projectId: "voteindia-55a34",
-    storageBucket: "voteindia-55a34.appspot.com",
-    messagingSenderId: "781343239500",
-    appId: "1:781343239500:web:f35eb7325c67adc90733e9"
-  };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-let database = firebase.database();
+
 //sgMail: require('@sendgrid/mail');
 let currUser=sessionStorage.getItem('UID');
 let currTyp=sessionStorage.getItem('Utyp');
@@ -49,20 +38,6 @@ function adl(){
     });
 
 }
-function checkA(){
-    if(currUser==""){
-        location.replace('login.html');
-    }else if(currTyp=="volu"){
-        location.replace('volunteer.html');
-    }
-}
-function checkV(){
-    if(currUser==""){
-        location.replace('login.html');
-    }else if(currTyp=="admin"){
-        location.replace('admin.html')
-    }
-}
 
 function getVol(){
     $('#aaVol').html("");
@@ -77,6 +52,24 @@ function getVol(){
             $neT.find('.userName').html(res.val().name);
             $neT.find('.userID').html(res.val().email);
             $('#aaVol').append($neT);
+            $neT.show();
+        });
+        
+    });
+}
+function getCan(){
+    $('#aaCan').html("");
+    const $canTemp=$('.canTemplate');
+
+    database.ref('Candidates').on('value',(result)=>{
+        result.forEach((res)=>{
+            console.log(res);
+            console.log(res.val().name);
+            console.log(res.val().pic);
+            const $neT=$canTemp.clone();
+            $neT.find('.userName').html(res.val().name);
+            $neT.find('.userID').html(res.val().pic);
+            $('#aaCan').append($neT);
             $neT.show();
         });
         
@@ -149,7 +142,17 @@ function createVol(){
     // ..
   });
 }
-
+function createCan(){
+    var name=document.getElementById('cName').value;
+    var pic=document.getElementById('cPic').value;
+    var userid=database.ref('Candidates').push().key;
+    database.ref('Candidates/'+userid).set({
+        name,
+        pic,
+    });
+    getCan();
+  
+}
 function cancel(){
     document.getElementById('vName').value="";
     document.getElementById('vEmail').value="";
@@ -178,7 +181,7 @@ function genVID(){
             var VID=generateVID();
             sessionStorage.setItem('VID',VID);
             sessionStorage.setItem('mobile',res.val().Mobile);
-            console.log("Verified Successfully!");sendVID();
+            sendVID();
         }else{
             console.log("TRY AGAIN");
         }
@@ -198,8 +201,8 @@ function sendVID(){
         database.ref('Voters/'+vuid+'/verified').set(true);
         
         sessionStorage.setItem('VID',"");
+        alert("Verified successfully!");
     }
 }
-
 
 

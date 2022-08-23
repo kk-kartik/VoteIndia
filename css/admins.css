@@ -49,7 +49,7 @@ button{
     padding: 1vw;
 }
 
-.addVol button{
+.addVol button, .addcan button{
     margin: 10px;
     padding: 10px;
     font-size: 14px;
@@ -77,35 +77,54 @@ input{
     height: 70vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    position: relative;
 }
-.addVol{
+.addVol, .addcan{
+    position: absolute;
+    bottom: 0;
     margin: 10px;
     width: 100%;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    text-align: center;
     z-index:150;
 }
-.aavol,
-.AVol{
-    margin: 10px;
+
+.aaVol,
+.AVol,
+.aacan{
+    margin: 0 20px;
     border: 2px solid;
     padding: 1vw 1vw;
     justify-content: center;
     text-align: center;
 
 }
-.volTemplate{
+
+.volTemplate,.canTemplate{
     display:grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     justify-items: center;
     text-align: center;
     align-content: center;
+    margin: 10px;
+    border: #000;
+    width: 90%;
 }
-.aCan,
-.stats{
+.aaCan .canTemplate div{
+    margin-top: 50px;
+    border: 2px solid;
+    padding: 1vw 1vw;
+    justify-content: center;
+    text-align: center;
+
+}
+.aCan{
     display: none;
+    grid-template-columns: repeat(auto-fit, minmax(100vw, 2fr));
 }
 .login,
 .volmain{
@@ -119,7 +138,7 @@ form{
     background-image: linear-gradient(to right bottom, rgb(42, 153, 161),rgb(135, 206, 211),rgb(42, 153, 161));
     display: flex;
     flex-direction: column;
-    padding: 1vw 1vw;
+    padding: 2vw 2vw;
     width: 90%;
     max-width: 500px;
     border-radius: 10px;
@@ -155,4 +174,11 @@ form button{
 .userName,
 .userID{
     font-size: 20px;
+}
+
+.aCan2{
+    width: 100%;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
